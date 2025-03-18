@@ -86,4 +86,53 @@ The prediction model uses:
 - Additional weather parameters (humidity, precipitation)
 - More advanced prediction models
 - Mobile-responsive design
-- API endpoint for predictions 
+- API endpoint for predictions
+
+                                 +----------------+
+                                 |  User Request  |
+                                 +----------------+
+                                        ↓
+                    +------------------------------------+
+                    |        City Selection Input         |
+                    +------------------------------------+
+                                        ↓
+            +------------------------------------------------+
+            |                 Weather Agent                    |
+            |  +----------------+        +----------------+    |
+            |  | Current Weather|        |Historical Data |    |
+            |  | API Request    |        |API Request     |    |
+            |  +----------------+        +----------------+    |
+            +------------------------------------------------+
+                           ↓                      ↓
+            +----------------+            +----------------+
+            |  Current Data  |            |Historical Data |
+            +----------------+            +----------------+
+                           ↓                      ↓
+            +------------------------------------------------+
+            |              Feature Engineering               |
+            | - Data Preprocessing                          |
+            | - Feature Scaling                             |
+            | - Time Series Preparation                     |
+            +------------------------------------------------+
+                                        ↓
+            +------------------------------------------------+
+            |              Prediction Engine                  |
+            | - Linear Regression Model                      |
+            | - Model Training                               |
+            | - Temperature Prediction                       |
+            +------------------------------------------------+
+                                        ↓
+            +------------------------------------------------+
+            |              Results Processing                 |
+            | - Prediction Storage                           |
+            | - Visualization Generation                     |
+            | - Metrics Calculation                          |
+            +------------------------------------------------+
+                                        ↓
+                    +------------------------------------+
+                    |        User Interface Display       |
+                    | - Current Weather                   |
+                    | - Prediction Results                |
+                    | - Historical Trends                 |
+                    | - Previous Predictions              |
+                    +------------------------------------+
